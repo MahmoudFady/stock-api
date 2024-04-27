@@ -33,4 +33,7 @@ export class AppUtils {
       ...options,
     });
   }
+  static verifyJwt<T>(token: string, key: string): T {
+    return jwt.verify(token, key) as T;
+  }
 }
