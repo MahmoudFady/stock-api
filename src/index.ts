@@ -4,7 +4,6 @@ import app from "./app";
 import http from "http";
 import { appEnv } from "./config/env.config";
 import { AppDataSource } from "./config/data-source.config";
-console.log(process.env);
 AppDataSource.then(() => {
   const server = http.createServer(app);
   console.log("db connection established");

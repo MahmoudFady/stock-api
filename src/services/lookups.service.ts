@@ -33,7 +33,6 @@ export const insertLookupDetail = async (data: LookupDetail) => {
     throw new AppError(" lookup parent does not exist ", "BAD_REQUEST");
   }
   data["lookupGroupId"] = lookupParent.lookupGroupId;
-  console.log("data ", data);
   const result = await lookupDetailRepo().insert(data);
   return { lookupDetailCode: data["lookupDetailCode"] };
 };
