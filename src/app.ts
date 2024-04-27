@@ -5,6 +5,8 @@ import { employeeRoutes } from "./routes/employee.routes";
 import { errMw } from "./middlewares/err.mw";
 import { lookupRoutes } from "./routes/lookup.routes";
 import { supplierRoutes } from "./routes/supplier.routes";
+import { orderRoutes } from "./routes/order.routes";
+import { orderItemRoutes } from "./routes/order-item.routes";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -12,6 +14,7 @@ app.use(morgan("dev"));
 app.use("/api/v1/employees", employeeRoutes);
 app.use("/api/v1/lookups", lookupRoutes);
 app.use("/api/v1/suppliers", supplierRoutes);
-
+app.use("/api/v1/orders", orderRoutes);
+app.use("/api/v1/order-items", orderItemRoutes);
 app.use(errMw);
 export default app;
